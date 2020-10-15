@@ -1,0 +1,94 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01JF30GQPJTJB4q1cORlf1F2mwnpzVGUZEe",
+    "name": "httpsig",
+    "title": "httpsig",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "httpsig",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01JF30MXL3I244xmnxvhX4lH2RDaVgES888",
+        "name": "HTTP Request",
+        "title": "HTTP Request",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "display_name": "HTTP Request",
+          "method": "GET",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01JF30ELYD6SE5vIc3P7U3aRnh5eilcQy5O"
+          }
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "targets": {
+    "definition_target_01JF30ELYD6SE5vIc3P7U3aRnh5eilcQy5O": {
+      "unique_name": "definition_target_01JF30ELYD6SE5vIc3P7U3aRnh5eilcQy5O",
+      "name": "httpsig",
+      "title": "httpsig",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_01JF2ZWX6Z4XV6hO12030chPFiVVQEusgrt",
+        "disable_certificate_validation": true,
+        "display_name": "httpsig",
+        "host": "ec2.amazonaws.com",
+        "ignore_proxy": false,
+        "no_runtime_user": false,
+        "protocol": "http"
+      }
+    }
+  },
+  "runtime_users": {
+    "definition_runtime_user_01JF2ZWX6Z4XV6hO12030chPFiVVQEusgrt": {
+      "unique_name": "definition_runtime_user_01JF2ZWX6Z4XV6hO12030chPFiVVQEusgrt",
+      "name": "httpsig",
+      "title": "httpsig",
+      "type": "runtime_user.web-service_signature_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "algorithm": "*****",
+        "display_name": "httpsig",
+        "key_id": "*****",
+        "priv_key": "*****"
+      }
+    }
+  }
+}
