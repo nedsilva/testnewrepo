@@ -1,0 +1,118 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01JFPSD0SL42C5utt6YYGDAiVqoJVBStybH",
+    "name": "table",
+    "title": "table",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "description": " ",
+      "display_name": "table",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01JFPSHGZ58VP4ZD0CDuOR8zL5oFI3i7vvs",
+        "name": "Select from Table",
+        "title": "Select from Table",
+        "type": "core.selectfromtable",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "columns": [
+            {
+              "column_name": "name",
+              "column_type": "string"
+            },
+            {
+              "column_name": "age",
+              "column_type": "integer"
+            }
+          ],
+          "continue_on_failure": false,
+          "display_name": "Select from Table",
+          "input_table": "$global.variable_01JFPSA082M1J5ADJNHoFFr8gXhFSxHv5ah.global.variable_01JFPSA082M1J5ADJNHoFFr8gXhFSxHv5ah$",
+          "number_of_rows": {
+            "all_rows": true
+          },
+          "persist_output": false,
+          "skip_execution": false,
+          "sorting": {
+            "no_sort": true
+          },
+          "where_clause": "name=\"alex\""
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "variables": {
+    "variable_01JFPSA082M1J5ADJNHoFFr8gXhFSxHv5ah": {
+      "unique_name": "variable_01JFPSA082M1J5ADJNHoFFr8gXhFSxHv5ah",
+      "schema_id": "tabletype_01JFPPNIBFKMU6yTpAPJagieAk2K193tQkS",
+      "properties": {
+        "value": [
+          {
+            "column_data": {
+              "age": 1,
+              "name": "anna"
+            }
+          },
+          {
+            "column_data": {
+              "age": 2,
+              "name": "alex"
+            }
+          }
+        ],
+        "scope": "global",
+        "name": "new table",
+        "type": "datatype.table",
+        "is_required": false
+      },
+      "object_type": "variable"
+    }
+  },
+  "table_types": {
+    "tabletype_01JFPPNIBFKMU6yTpAPJagieAk2K193tQkS": {
+      "unique_name": "tabletype_01JFPPNIBFKMU6yTpAPJagieAk2K193tQkS",
+      "data_type": "datatype.tabletype",
+      "display_name": "new table type",
+      "columns": [
+        {
+          "is_required": true,
+          "name": "age",
+          "title": "age",
+          "type": "integer"
+        },
+        {
+          "is_required": true,
+          "name": "name",
+          "title": "name",
+          "type": "string"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    }
+  }
+}
